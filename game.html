@@ -1,0 +1,29 @@
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>My Game</title>
+       <style>
+           canvas { background: #eee; display: block; margin: 0 auto; }
+       </style>
+   </head>
+   <body>
+       <canvas id="gameCanvas" width="400" height="400"></canvas>
+       <script>
+           const canvas = document.getElementById('gameCanvas');
+           const ctx = canvas.getContext('2d');
+
+           let x = canvas.width / 2;
+           let y = canvas.height - 30;
+
+           function draw() {
+               ctx.clearRect(0, 0, canvas.width, canvas.height);
+               ctx.fillStyle = "#0095DD";
+               ctx.fillRect(x, y, 50, 50);
+               x += 1;  // Двигаем квадрат
+           }
+
+           setInterval(draw, 10);
+       </script>
+   </body>
+   </html>
+   
